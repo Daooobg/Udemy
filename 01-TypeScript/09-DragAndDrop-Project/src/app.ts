@@ -66,6 +66,12 @@ class ProjectInput {
     }
   }
 
+  private clearInputs() {
+    this.titleInputEl.value = '';
+    this.descriptionInputEl.value = '';
+    this.peopleInputEl.value = '';
+  }
+
   @Autobind
   private submitHandler(e: Event) {
     e.preventDefault();
@@ -73,6 +79,7 @@ class ProjectInput {
     if (Array.isArray(userInput)) {
       const [title, description, people] = userInput;
       console.log(title, description, people);
+      this.clearInputs();
     }
   }
 
